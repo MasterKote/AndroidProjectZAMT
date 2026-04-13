@@ -1,5 +1,6 @@
 package com.example.androidprojectzamt.ui.theme
 
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
 val Purple80 = Color(0xFFD0BCFF)
@@ -25,3 +26,33 @@ val ButActive = Color(0xFF1A6FEE)
 val WelcomeScreenBlue = Color(0xFF57A9FF)
 val WelcomeScreenGreen = Color(0xFF00B712)
 val WelcomeScreenGray = Color(0xFF939396)
+//pr7
+data class AppColors(
+    val primary: Color,
+    val secondary: Color,
+    val success: Color,
+    val warning: Color,
+    val info: Color,
+    val error: Color,
+    val blacktext1: Color,
+    val blacktext2: Color,
+    val gray1: Color,
+    val gray2: Color,
+    val white: Color
+)
+
+val LocalAppColors = staticCompositionLocalOf {
+    AppColors(
+        primary = Color.Unspecified,
+        secondary = Color.Unspecified,
+        success = Color.Unspecified,
+        warning = Color.Unspecified,
+        info = Color.Unspecified,
+        error = Color.Unspecified,
+        blacktext1 = Color.Unspecified,
+        blacktext2 = Color.Unspecified,
+        gray1 = Color.Unspecified,
+        gray2 = Color.Unspecified,
+        white = Color.Unspecified
+    )
+}

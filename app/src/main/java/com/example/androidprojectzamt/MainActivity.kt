@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.androidprojectzamt.ui.theme.MyTheme
 import com.example.androidprojectzamt.ui.theme.Pr7theme
+import com.example.pr5.Screen.SignUp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,31 +21,32 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Pr7theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                SignUp()
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier,
-        style = MyTheme.typography.headingblack96,
-        color = MyTheme.colors.primary
-    )
-}
+//@Composable
+//fun Greeting(name: String, modifier: Modifier = Modifier) {
+//    Text(
+//        text = "Hello $name!",
+//        modifier = modifier,
+//        style = MyTheme.typography.headingblack96,
+//        color = MyTheme.colors.primary
+//    )
+//}
 
-@Preview(showBackground = true)
+//@Preview(showBackground = true)
+//@Composable
+//fun GreetingPreview() {
+//    Pr7theme {
+//        Greeting("Android")
+//    }
+//}
+
+@Preview
 @Composable
-fun GreetingPreview() {
-    Pr7theme {
-        Greeting("Android")
-    }
+private fun SignUpPrev() {
+    SignUp()
 }

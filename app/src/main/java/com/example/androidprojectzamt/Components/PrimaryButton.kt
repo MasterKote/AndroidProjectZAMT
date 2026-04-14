@@ -8,6 +8,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.LinkAnnotation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androidprojectzamt.ui.theme.ButtonColor
@@ -16,7 +17,11 @@ import com.example.androidprojectzamt.ui.theme.DisabledButtonColor
 import com.example.androidprojectzamt.ui.theme.SecondaryButtonColor
 
 @Composable
-fun PrimaryButton(modifier: Modifier = Modifier) {
+fun PrimaryButton(modifier: Modifier = Modifier,
+                  buttontext: String,
+                  onClick: () -> Unit,
+                  enabled: Boolean = true
+                  ) {
     Button(
         onClick = {},
         colors = ButtonColors(
@@ -27,20 +32,24 @@ fun PrimaryButton(modifier: Modifier = Modifier) {
         )
     ) {
         Text(
-            text = "Button"
+            text = buttontext
         )
     }
 }
 
 @Composable
-fun SecondaryButton(modifier: Modifier = Modifier) {
+fun SecondaryButton(modifier: Modifier = Modifier,
+                    secbuttontext: String,
+                    onClick: () -> Unit,
+                    enabled: Boolean = true
+                    ) {
     OutlinedButton(
         onClick = {},
         border = BorderStroke(1.dp, color = SecondaryButtonColor),
         shape = RoundedCornerShape(15)
     ) {
         Text(
-            text = "Secondary Button",
+            text = secbuttontext,
             color = SecondaryButtonColor
         )
     }
@@ -49,11 +58,11 @@ fun SecondaryButton(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun PrimaryButtonPreview() {
-    PrimaryButton()
+    PrimaryButton(buttontext = "Кнопка", onClick = {}, enabled = true)
 }
 
 @Preview
 @Composable
 private fun SecondaryButtonPreview() {
-    SecondaryButton()
+    SecondaryButton(secbuttontext = "Доп. кнопка", onClick = {}, enabled = true)
 }

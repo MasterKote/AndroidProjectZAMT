@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -15,6 +16,8 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -25,6 +28,9 @@ import androidx.compose.ui.unit.sp
 import com.example.androidprojectzamt.ui.theme.ButActive
 import com.example.androidprojectzamt.ui.theme.ButInactive
 import com.example.androidprojectzamt.ui.theme.Gray
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.text.Placeholder
 
 @Composable
 fun SignUp(modifier: Modifier = Modifier) {
@@ -37,7 +43,8 @@ fun SignUp(modifier: Modifier = Modifier) {
     ) {
         Column(
             modifier = modifier
-                .width(335.dp),
+                .width(335.dp)
+                .padding(start = 20.dp, end = 20.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Spacer(
@@ -79,15 +86,16 @@ fun SignUp(modifier: Modifier = Modifier) {
                 modifier.height(4.dp)
             )
 
+            var buttonstate by remember { mutableStateOf("") }
+
             OutlinedTextField(
-                value = "",
-                onValueChange = {},
-                label = { Text("example@mail.ru") },
+                value = buttonstate,
+                onValueChange = {buttonstate = it},
+                placeholder = { Text("example@mail.ru")},
                 modifier = Modifier
-                    .width(340.dp)
-                    .height(48.dp),
+                    .width(335.dp)
+                    .height(55.dp),
                 shape = RoundedCornerShape(12.dp),
-                singleLine = true,
                 enabled = true
             )
 
@@ -97,7 +105,7 @@ fun SignUp(modifier: Modifier = Modifier) {
 
             Button(
                 onClick = { },
-                enabled = false,
+                enabled = buttonstate.isNotEmpty(),
                 modifier = Modifier
                     .width(340.dp)
                     .height(54.dp),

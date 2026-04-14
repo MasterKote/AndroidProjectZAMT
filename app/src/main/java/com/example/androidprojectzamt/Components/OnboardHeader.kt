@@ -1,5 +1,6 @@
 package com.example.pr4.ui.theme.Components
 
+import android.R
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -11,46 +12,46 @@ import com.example.androidprojectzamt.ui.theme.DescriptionColor
 import com.example.androidprojectzamt.ui.theme.TextButtonColor
 
 @Composable
-fun OnboardHeader(modifier: Modifier = Modifier) {
+fun OnboardHeader(text: String,modifier: Modifier = Modifier) {
     Text(
-        text = "Text",
+        text = text,
         color = AccentColor
     )
 }
 
 @Composable
-fun OnboardDescription(modifier: Modifier = Modifier) {
+fun OnboardDescription(description: String,modifier: Modifier = Modifier) {
     Text(
-        text = "Description",
+        text = description,
         color = DescriptionColor
     )
 }
 
 @Composable
-fun OnboardTextButton(modifier: Modifier = Modifier) {
+fun OnboardTextButton(buttontext: String,modifier: Modifier = Modifier) {
     TextButton (onClick = {  },
         colors = ButtonDefaults.textButtonColors(
             contentColor = TextButtonColor
         ))
     {
-        Text("Click on me")
+        Text(buttontext)
     }
 }
 
 @Preview
 @Composable
 private fun OnboardHeaderPreview() {
-    OnboardHeader()
+    OnboardHeader("Текст")
 }
 
 @Preview
 @Composable
 private fun OnboardDescriptionPreview() {
-    OnboardDescription()
+    OnboardDescription("Описание")
 }
 
 @Preview
 @Composable
 private fun OnboardTextButtonPreview() {
-    OnboardTextButton()
+    OnboardTextButton("Нажми на меня")
 }

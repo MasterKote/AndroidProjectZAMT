@@ -61,7 +61,6 @@ fun WelcomeScreen(textbut: String, maintext: String,descriptiontext: String,modi
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .width(225.dp)
                 .padding(top = 273.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -82,26 +81,16 @@ fun WelcomeScreen(textbut: String, maintext: String,descriptiontext: String,modi
                 lineHeight = 20.sp,
                 fontWeight = FontWeight(400),
             )
-        }
 
-        Row(
-            modifier = Modifier
-                .padding(top = 406.dp)
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
-        ) {
+            Spacer(Modifier.height(60.dp))
+
             Image(
                 painter = painterResource(id = R.drawable.kruzochki1),
                 contentDescription = "ellipse"
             )
-        }
 
-        Row(
-            modifier = Modifier
-                .padding(top = 526.dp)
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
-        ) {
+            Spacer(Modifier.height(106.dp))
+
             Image(
                 painter = painterResource(id = R.drawable.kolba),
                 contentDescription = "main_picture",

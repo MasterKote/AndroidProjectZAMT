@@ -2,14 +2,12 @@ package com.example.pr5.Screen
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -31,12 +29,11 @@ import com.example.androidprojectzamt.ui.theme.ButInactive
 import com.example.androidprojectzamt.ui.theme.Gray
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.text.Placeholder
-import androidx.compose.ui.text.style.LineHeightStyle
-import androidx.compose.ui.text.style.TextAlign
+import androidx.navigation.compose.rememberNavController
+import com.example.androidprojectzamt.PlacingAnOrderScreen
 
 @Composable
-fun SignUp(modifier: Modifier = Modifier) {
+fun SignUp(navController: androidx.navigation.NavHostController,modifier: Modifier = Modifier) {
     Column( modifier = Modifier
         .fillMaxSize()
         .background(color = Color.White)
@@ -95,7 +92,7 @@ fun SignUp(modifier: Modifier = Modifier) {
         )
 
         Button(
-            onClick = { },
+            onClick = { navController.navigate(PlacingAnOrderScreen) },
             enabled = buttonstate.isNotEmpty(),
             modifier = Modifier
                 .fillMaxWidth()
@@ -152,5 +149,6 @@ fun SignUp(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun SignUpPrev() {
-    SignUp()
+    val navController = rememberNavController()
+    SignUp(navController = navController)
 }

@@ -28,6 +28,10 @@ val WelcomeScreenGreen = Color(0xFF00B712)
 val WelcomeScreenGray = Color(0xFF939396)
 //pr9
 val buttonbackcolor = Color(0xFFF5F5F9)
+val greentext = Color(0xFF00B712)
+val bluetext = Color(0xFF1A6FEE)
+val lightgrey = Color(0xFF7E7E9A)
+val lightgrey2 = Color(0xFF939396)
 //pr7
 data class AppColors(
     val primary: Color,

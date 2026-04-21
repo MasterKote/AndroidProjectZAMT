@@ -26,6 +26,8 @@ val ButActive = Color(0xFF1A6FEE)
 val WelcomeScreenBlue = Color(0xFF57A9FF)
 val WelcomeScreenGreen = Color(0xFF00B712)
 val WelcomeScreenGray = Color(0xFF939396)
+//pr9
+val buttonbackcolor = Color(0xFFF5F5F9)
 //pr7
 data class AppColors(
     val primary: Color,

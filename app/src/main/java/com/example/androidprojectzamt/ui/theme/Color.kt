@@ -1,5 +1,6 @@
 package com.example.androidprojectzamt.ui.theme
 
+import android.R
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
@@ -32,6 +33,10 @@ val greentext = Color(0xFF00B712)
 val bluetext = Color(0xFF1A6FEE)
 val lightgrey = Color(0xFF7E7E9A)
 val lightgrey2 = Color(0xFF939396)
+//pr10
+val bottombarnotactive = Color(0xFFB8C1CC)
+val bottomnavactive = Color(0xFF1A6FEE)
+val whitecolor = Color(0xFFFFFFFF)
 //pr7
 data class AppColors(
     val primary: Color,

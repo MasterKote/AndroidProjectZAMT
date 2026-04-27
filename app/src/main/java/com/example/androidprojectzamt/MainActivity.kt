@@ -11,18 +11,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.androidprojectzamt.Screen.OpderPaid
 import com.example.androidprojectzamt.Screen.PlacingAnOrder
+import com.example.androidprojectzamt.Screen.PlacingAnOrderScreen
+import com.example.androidprojectzamt.Screen.OrderPaidScreen
+import com.example.androidprojectzamt.Screen.SignUpScreen
 import com.example.androidprojectzamt.ui.theme.Pr7theme
 import com.example.pr5.Screen.SignUp
-import kotlinx.serialization.Serializable
-
-@Serializable
-object SignUpScreen
-
-@Serializable
-object PlacingAnOrderScreen
-
-@Serializable
-object OrderPaidScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +30,14 @@ class MainActivity : ComponentActivity() {
                     startDestination = SignUpScreen
                 ) {
                     composable<SignUpScreen> {
-                        SignUp(navController = navController)
+                        SignUp(Maintext = "Добро пожаловать!",
+                            text1 = "Войдите, чтобы пользоваться функциями приложения",
+                            text2 = "Вход по E-mail",
+                            texttextfield = "example@mail.ru",
+                            textbut = "Далее",
+                            text3 = "Или войдите с помощью",
+                            textbut2 = "Войти с Яндекс",
+                            navController = navController)
                     }
 
                     composable<PlacingAnOrderScreen> {
@@ -99,5 +99,12 @@ class MainActivity : ComponentActivity() {
 @Composable
 private fun SignUpPrev() {
     val navController = rememberNavController()
-    SignUp(navController = navController)
+    SignUp("Добро пожаловать!",
+        "Войдите, чтобы пользоваться функциями приложения",
+        "Вход по E-mail",
+        "example@mail.ru",
+        "Далее",
+        "Или войдите с помощью",
+        "Войти с Яндекс",
+        navController = navController)
 }

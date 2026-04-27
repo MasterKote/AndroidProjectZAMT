@@ -37,7 +37,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
 import com.example.androidprojectzamt.R
-import com.example.androidprojectzamt.SignUpScreen
+import com.example.androidprojectzamt.Screen.SignUpScreen
 import com.example.androidprojectzamt.ui.theme.ButActive
 import com.example.androidprojectzamt.ui.theme.ButInactive
 import com.example.androidprojectzamt.ui.theme.bluetext

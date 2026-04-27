@@ -30,10 +30,12 @@ import com.example.androidprojectzamt.ui.theme.Gray
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.navigation.compose.rememberNavController
-import com.example.androidprojectzamt.PlacingAnOrderScreen
+import com.example.androidprojectzamt.Screen.PlacingAnOrderScreen
 
 @Composable
-fun SignUp(navController: androidx.navigation.NavHostController,modifier: Modifier = Modifier) {
+fun SignUp(Maintext: String,text1: String, text2: String,
+           texttextfield: String, textbut: String,text3: String,
+           textbut2: String,navController: androidx.navigation.NavHostController,modifier: Modifier = Modifier) {
     Column( modifier = Modifier
         .fillMaxSize()
         .background(color = Color.White)
@@ -44,7 +46,7 @@ fun SignUp(navController: androidx.navigation.NavHostController,modifier: Modifi
             modifier.height(103.dp)
         )
         Text(
-            text = "Добро пожаловать!",
+            text = Maintext,
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold
         )
@@ -54,7 +56,7 @@ fun SignUp(navController: androidx.navigation.NavHostController,modifier: Modifi
         )
 
         Text(
-            text = "Войдите, чтобы пользоваться функциями приложения",
+            text = text1,
             fontSize = 17.sp
         )
 
@@ -66,7 +68,7 @@ fun SignUp(navController: androidx.navigation.NavHostController,modifier: Modifi
             modifier = modifier
                 .height(14.dp)
                 .fillMaxWidth(),
-            text = "Вход по E-mail",
+            text = text2,
             color = Gray
         )
 
@@ -79,7 +81,7 @@ fun SignUp(navController: androidx.navigation.NavHostController,modifier: Modifi
         OutlinedTextField(
             value = buttonstate,
             onValueChange = { buttonstate = it },
-            placeholder = { Text("example@mail.ru") },
+            placeholder = { Text(texttextfield) },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(54.dp),
@@ -106,7 +108,7 @@ fun SignUp(navController: androidx.navigation.NavHostController,modifier: Modifi
             )
         ) {
             Text(
-                text = "Далее",
+                text = textbut,
                 fontSize = 16.sp,
             )
         }
@@ -117,7 +119,7 @@ fun SignUp(navController: androidx.navigation.NavHostController,modifier: Modifi
         )
 
         Text(
-            text = "Или войдите с помощью",
+            text = text3,
             fontSize = 15.sp,
             color = Gray
         )
@@ -139,7 +141,7 @@ fun SignUp(navController: androidx.navigation.NavHostController,modifier: Modifi
             border = BorderStroke(1.5.dp, ButActive)
         ) {
             Text(
-                text = "Войти с Яндекс",
+                text = textbut2,
                 fontSize = 17.sp,
             )
         }
@@ -150,5 +152,12 @@ fun SignUp(navController: androidx.navigation.NavHostController,modifier: Modifi
 @Composable
 private fun SignUpPrev() {
     val navController = rememberNavController()
-    SignUp(navController = navController)
+    SignUp("Добро пожаловать!",
+        "Войдите, чтобы пользоваться функциями приложения",
+        "Вход по E-mail",
+        "example@mail.ru",
+        "Далее",
+        "Или войдите с помощью",
+        "Войти с Яндекс",
+        navController = navController)
 }

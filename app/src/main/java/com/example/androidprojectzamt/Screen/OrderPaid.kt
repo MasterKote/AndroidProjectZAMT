@@ -58,7 +58,8 @@ fun OpderPaid(
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color.White)
-            .padding(top = 60.dp),
+            .padding(top = 60.dp, start = 20.dp, end = 20.dp, bottom = 40.dp),
+
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
@@ -68,7 +69,7 @@ fun OpderPaid(
             lineHeight = 28.sp
         )
 
-        Spacer(Modifier.height(82.dp))
+        Spacer(Modifier.weight(1f))
 
         Image(
             painter = painterResource(id = ico),
@@ -127,12 +128,12 @@ fun OpderPaid(
             )
         )
 
-        Spacer(Modifier.height(97.dp))
+        Spacer(Modifier.weight(2f))
 
         OutlinedButton(
             onClick = { },
             modifier = Modifier
-                .width(335.dp)
+                .fillMaxWidth()
                 .height(56.dp),
             shape = RoundedCornerShape(12.dp),
             border = BorderStroke(1.dp, ButActive)
@@ -147,8 +148,7 @@ fun OpderPaid(
 
         Button(
             onClick = { navController.navigate(SignUpScreen) },
-            modifier = Modifier
-                .width(335.dp)
+            modifier = Modifier.fillMaxWidth()
                 .height(56.dp),
             shape = RoundedCornerShape(12.dp),
             colors = ButtonDefaults.buttonColors(

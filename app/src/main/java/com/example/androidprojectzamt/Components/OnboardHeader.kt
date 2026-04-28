@@ -19,39 +19,8 @@ fun OnboardHeader(text: String,modifier: Modifier = Modifier) {
     )
 }
 
-@Composable
-fun OnboardDescription(description: String,modifier: Modifier = Modifier) {
-    Text(
-        text = description,
-        color = DescriptionColor
-    )
-}
-
-@Composable
-fun OnboardTextButton(buttontext: String,modifier: Modifier = Modifier) {
-    TextButton (onClick = {  },
-        colors = ButtonDefaults.textButtonColors(
-            contentColor = TextButtonColor
-        ))
-    {
-        Text(buttontext)
-    }
-}
-
 @Preview
 @Composable
 private fun OnboardHeaderPreview() {
     OnboardHeader("Текст")
-}
-
-@Preview
-@Composable
-private fun OnboardDescriptionPreview() {
-    OnboardDescription("Описание")
-}
-
-@Preview
-@Composable
-private fun OnboardTextButtonPreview() {
-    OnboardTextButton("Нажми на меня")
 }

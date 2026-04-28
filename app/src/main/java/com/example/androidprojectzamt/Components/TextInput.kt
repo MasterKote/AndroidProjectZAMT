@@ -7,17 +7,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun TextInput(hint: String) {
-    var text by remember { mutableStateOf("") }
-
+fun TextInput(hint: String, value: String, onValueChange: (String) -> Unit) {
     OutlinedTextField(
-        value = text,
-        onValueChange = { text = it },
-        placeholder = { Text(hint)}
+        value = value,
+        onValueChange = onValueChange,
+        placeholder = { Text(hint)},
+        colors = TextFieldDefaults.colors()
     )
 }
 @Preview
 @Composable
 private fun TextInputPreview() {
-    TextInput("Подсказка")
+    TextInput("Подсказка", value = "Текст", onValueChange = {})
 }

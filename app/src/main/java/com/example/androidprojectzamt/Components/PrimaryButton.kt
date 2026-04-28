@@ -17,13 +17,15 @@ import com.example.androidprojectzamt.ui.theme.DisabledButtonColor
 import com.example.androidprojectzamt.ui.theme.SecondaryButtonColor
 
 @Composable
-fun PrimaryButton(modifier: Modifier = Modifier,
-                  buttontext: String,
-                  onClick: () -> Unit,
-                  enabled: Boolean = true
+fun PrimaryButton(
+    modifier: Modifier = Modifier,
+    buttontext: String,
+    onClick: () -> Unit,
+    enabled: Boolean = true
                   ) {
     Button(
-        onClick = {},
+        onClick = onClick,
+        enabled = enabled,
         colors = ButtonColors(
             containerColor = ButtonColor,
             contentColor = ButtonColorText,
@@ -37,32 +39,8 @@ fun PrimaryButton(modifier: Modifier = Modifier,
     }
 }
 
-@Composable
-fun SecondaryButton(modifier: Modifier = Modifier,
-                    secbuttontext: String,
-                    onClick: () -> Unit,
-                    enabled: Boolean = true
-                    ) {
-    OutlinedButton(
-        onClick = {},
-        border = BorderStroke(1.dp, color = SecondaryButtonColor),
-        shape = RoundedCornerShape(15)
-    ) {
-        Text(
-            text = secbuttontext,
-            color = SecondaryButtonColor
-        )
-    }
-}
-
 @Preview
 @Composable
 private fun PrimaryButtonPreview() {
     PrimaryButton(buttontext = "Кнопка", onClick = {}, enabled = true)
-}
-
-@Preview
-@Composable
-private fun SecondaryButtonPreview() {
-    SecondaryButton(secbuttontext = "Доп. кнопка", onClick = {}, enabled = true)
 }

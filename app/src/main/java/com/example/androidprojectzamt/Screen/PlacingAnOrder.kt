@@ -63,7 +63,7 @@ fun PlacingAnOrder(
     Column(modifier = Modifier
         .fillMaxSize()
         .background(color = Color.White)
-        .padding(start = 20.dp, end = 26.dp, top = 60.dp),
+        .padding(start = 20.dp, end = 26.dp, top = 60.dp, bottom = 20.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         OutlinedButton(
@@ -187,7 +187,7 @@ fun PlacingAnOrder(
             enabled = true,
         )
 
-        Spacer(Modifier.height(143.dp))
+        Spacer(Modifier.weight(2f))
 
         Row(
             modifier = modifier

@@ -39,7 +39,7 @@ fun SignUp(Maintext: String,text1: String, text2: String,
     Column( modifier = Modifier
         .fillMaxSize()
         .background(color = Color.White)
-        .padding(start = 20.dp, end = 20.dp),
+        .padding(start = 20.dp, end = 20.dp, bottom = 20.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(
@@ -115,7 +115,7 @@ fun SignUp(Maintext: String,text1: String, text2: String,
 
 
         Spacer(
-            modifier.height(238.dp)
+            modifier.weight(2f)
         )
 
         Text(

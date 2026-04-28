@@ -30,78 +30,78 @@ import com.example.androidprojectzamt.ui.theme.Pr7theme
 import com.example.pr5.Screen.SignUp
 
 //pr9
-//class MainActivity : ComponentActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
-//        setContent {
-//            Pr7theme {
-//                val navController = rememberNavController()
-//
-//                NavHost(
-//                    navController = navController,
-//                    startDestination = SignUpScreen
-//                ) {
-//                    composable<SignUpScreen> {
-//                        SignUp(Maintext = "Добро пожаловать!",
-//                            text1 = "Войдите, чтобы пользоваться функциями приложения",
-//                            text2 = "Вход по E-mail",
-//                            texttextfield = "example@mail.ru",
-//                            textbut = "Далее",
-//                            text3 = "Или войдите с помощью",
-//                            textbut2 = "Войти с Яндекс",
-//                            navController = navController)
-//                    }
-//
-//                    composable<PlacingAnOrderScreen> {
-//                        PlacingAnOrder(
-//                            navController = navController,
-//                            maintext = "Оформление заказа",
-//                            text1 = "Адрес *",
-//                            textfieldtext1 = "Введите ваш адрес",
-//                            text2 = "Телефон *",
-//                            textfeildtext2 = "Введите ваш номер телефона",
-//                            text3 = "Комментарий",
-//                            textfieldtext3 = "Можете оставить свои пожелания",
-//                            text4 = "Промокод",
-//                            text5 = "1 анализ",
-//                            text6 = "690 ₽",
-//                            buttontext = "Заказать",
-//                            icoback = R.drawable.back,
-//                            iconext = R.drawable.next,
-//                            icovoice = R.drawable.voice
-//                        )
-//                    }
-//
-//                    composable<OrderPaidScreen> {
-//                        OpderPaid(
-//                            navController = navController,
-//                            maintext = "Оплата",
-//                            text1 = "Ваш заказ успешно оплачен!",
-//                            text2 = "Вам осталось дождаться приезда медсестры и сдать анализы. \nДо скорой встречи!",
-//                            outlinedbuttext = "Чек покупки",
-//                            buttext = "На главную",
-//                            ico = R.drawable.kolba
-//                        )
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
-
-//pr10
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             Pr7theme {
-                BottomBarNav()
+                val navController = rememberNavController()
+
+                NavHost(
+                    navController = navController,
+                    startDestination = SignUpScreen
+                ) {
+                    composable<SignUpScreen> {
+                        SignUp(Maintext = "Добро пожаловать!",
+                            text1 = "Войдите, чтобы пользоваться функциями приложения",
+                            text2 = "Вход по E-mail",
+                            texttextfield = "example@mail.ru",
+                            textbut = "Далее",
+                            text3 = "Или войдите с помощью",
+                            textbut2 = "Войти с Яндекс",
+                            navController = navController)
+                    }
+
+                    composable<PlacingAnOrderScreen> {
+                        PlacingAnOrder(
+                            navController = navController,
+                            maintext = "Оформление заказа",
+                            text1 = "Адрес *",
+                            textfieldtext1 = "Введите ваш адрес",
+                            text2 = "Телефон *",
+                            textfeildtext2 = "Введите ваш номер телефона",
+                            text3 = "Комментарий",
+                            textfieldtext3 = "Можете оставить свои пожелания",
+                            text4 = "Промокод",
+                            text5 = "1 анализ",
+                            text6 = "690 ₽",
+                            buttontext = "Заказать",
+                            icoback = R.drawable.back,
+                            iconext = R.drawable.next,
+                            icovoice = R.drawable.voice
+                        )
+                    }
+
+                    composable<OrderPaidScreen> {
+                        OpderPaid(
+                            navController = navController,
+                            maintext = "Оплата",
+                            text1 = "Ваш заказ успешно оплачен!",
+                            text2 = "Вам осталось дождаться приезда медсестры и сдать анализы. \nДо скорой встречи!",
+                            outlinedbuttext = "Чек покупки",
+                            buttext = "На главную",
+                            ico = R.drawable.kolba
+                        )
+                    }
+                }
             }
         }
     }
 }
+
+//pr10
+//class MainActivity : ComponentActivity() {
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        enableEdgeToEdge()
+//        setContent {
+//            Pr7theme {
+//                BottomBarNav()
+//            }
+//        }
+//    }
+//}
 
 //pr7
 //@Composable
